@@ -1,0 +1,9 @@
+{
+	"name": "Ingestcitibike",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7c9e10ea-5e70-42ef-a673-3cbba8ef4bc7",
+		"tenantId": "60e07b09-cd18-4ec6-a9e9-e178eafdf41b"
+	}
+}
