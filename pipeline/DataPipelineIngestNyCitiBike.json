@@ -1,0 +1,7 @@
+{
+	"name": "DataPipelineIngestNyCitiBike",
+	"properties": {
+		"description": "Ingest Citibike data for Slice and Dice",
+		"annotations": []
+	}
+}
