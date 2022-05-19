@@ -9,7 +9,7 @@
 						"referenceName": "CitiBikeData",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "CitiBikeAllData"
 				}
 			],
 			"sinks": [],
@@ -20,7 +20,7 @@
 				"     ignoreNoFilesFound: false,",
 				"     partitionRootPath: 'https://s3.amazonaws.com/tripdata',",
 				"     multiLineRow: true,",
-				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> source1"
+				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> CitiBikeAllData"
 			]
 		}
 	}
