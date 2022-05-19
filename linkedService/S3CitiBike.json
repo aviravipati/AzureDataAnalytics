@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://s3.amazonaws.com/tripdata/index.html",
+			"url": "https://s3.amazonaws.com/tripdata/JC-202107-citibike-tripdata.csv.zip",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
