@@ -1,0 +1,21 @@
+{
+	"name": "CitiBikeData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "S3CitiBike",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "gzip",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

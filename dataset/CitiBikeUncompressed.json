@@ -1,0 +1,21 @@
+{
+	"name": "CitiBikeUncompressed",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCitiBIke",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "citibikedata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
