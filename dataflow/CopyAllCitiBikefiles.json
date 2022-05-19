@@ -31,7 +31,7 @@
 				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> CitiBikeAllData",
 				"CitiBikeAllData sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:[''],",
+				"     partitionFileNames:['CitiAllBikeData.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> CitiBikeAllBlobStorage"
