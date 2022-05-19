@@ -12,7 +12,15 @@
 					"name": "CitiBikeAllData"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CitiBikeUncompressed",
+						"type": "DatasetReference"
+					},
+					"name": "CitiBikeAllBlobStorage"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
@@ -20,7 +28,13 @@
 				"     ignoreNoFilesFound: false,",
 				"     partitionRootPath: 'https://s3.amazonaws.com/tripdata',",
 				"     multiLineRow: true,",
-				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> CitiBikeAllData"
+				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> CitiBikeAllData",
+				"CitiBikeAllData sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:[''],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> CitiBikeAllBlobStorage"
 			]
 		}
 	}
