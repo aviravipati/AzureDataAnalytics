@@ -1,0 +1,27 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "CitiBikeData",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     partitionRootPath: 'https://s3.amazonaws.com/tripdata',",
+				"     multiLineRow: true,",
+				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> source1"
+			]
+		}
+	}
+}
