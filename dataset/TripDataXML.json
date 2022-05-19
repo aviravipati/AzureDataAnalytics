@@ -1,0 +1,19 @@
+{
+	"name": "TripDataXML",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCitiBIke",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Xml",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "tripdata.xml",
+				"folderPath": "b8c5d2de-16f9-4281-835b-49d0243fe2c0",
+				"container": "citibikedata"
+			}
+		}
+	}
+}
