@@ -6,10 +6,10 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "CitiBikeData",
+						"referenceName": "TripDataXML",
 						"type": "DatasetReference"
 					},
-					"name": "CitiBikeAllData"
+					"name": "CitiBikeAllDataXML"
 				}
 			],
 			"sinks": [
@@ -21,15 +21,22 @@
 					"name": "CitiBikeAllBlobStorage"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     partitionRootPath: 'https://s3.amazonaws.com/tripdata',",
-				"     multiLineRow: true,",
-				"     wildcardPaths:['https://s3.amazonaws.com/tripdata/*zip']) ~> CitiBikeAllData",
-				"CitiBikeAllData sink(allowSchemaDrift: true,",
+				"     validationMode: 'xsd',",
+				"     namespaces: true,",
+				"     wildcardPaths:['https://cs7100320002fc49105.blob.core.windows.net/citibikedata/b8c5d2de-16f9-4281-835b-49d0243fe2c0/output.xsd']) ~> CitiBikeAllDataXML",
+				"CitiBikeAllDataXML foldDown(unroll(),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['CitiAllBikeData.csv'],",
 				"     skipDuplicateMapInputs: true,",
