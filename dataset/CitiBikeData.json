@@ -12,7 +12,7 @@
 				"type": "HttpServerLocation"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "gzip",
+			"compressionCodec": "ZipDeflate",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
